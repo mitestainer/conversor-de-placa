@@ -1,0 +1,117 @@
+#result {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#result h1 {
+    font-family: 'Catamaran', sans-serif;
+    margin-bottom: 20px;
+}
+
+#plate {
+    padding: 15px;
+    background-color: #000;
+    border-radius: 15px;
+    width: 800px;
+    height: 260px;
+}
+
+#wrapper {
+    border-radius: 8px;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#upper {
+	background-color: #003399;
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 10px;
+}
+
+#upper > img {
+    height: 100%;
+}
+
+#upper p {
+	align-self: flex-end;
+	font-family: 'Catamaran', sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+	font-size: 35px;
+	line-height: 1;
+}
+
+#flag-wrapper {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 40px;
+    width: 57px;
+}
+
+#flag-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+#number {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#number p {
+    font-family: 'FE-FONT', sans-serif;
+    font-size: 130px;
+}
+
+#number img, #br-tag {
+    position: absolute;
+    left: 5px;
+}
+
+#number img {
+    position: absolute;
+    top: 5px;
+	left: 5px;
+	height: 42px;
+	width: 42px;
+}
+
+#br-tag {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 1;
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (max-width: 1023px) {
+    #plate {
+        max-width: 400px;
+        max-height: 340px;
+        width: calc(100vw * 0.9375);
+        height: calc(100vh * 0.92);
+    }
+
+    #number p {
+        font-size: 100px;
+    }
+
+    #number p span {
+        display: block;
+    }
+}
