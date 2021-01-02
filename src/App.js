@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Plate from './components/Plate'
 
 import './styles.css';
 
 export default function App() {
-	const [plate, setPlate] = useState('')
-	const [newPlate, setNewPlate] = useState('')
+	const [inputPlate, setInputPlate] = useState('')
+	const [displayPlate, setDisplayPlate] = useState('')
+	const [isPreviousPatterOn, togglePreviousPattern] = useState(false)
 
 	const convert = () => {
-		let _plate = plate.replace('-', '');
+		let _plate = inputPlate.replace('-', '');
 		_plate = _plate.split('');
 		switch (_plate[4]) {
 			case '0':
@@ -45,34 +46,83 @@ export default function App() {
 				break;
 		}
 		_plate = _plate.join('');
-		setNewPlate(_plate)
-	};
+		setDisplayPlate(_plate)
+	}
+
+	const convertBack = () => {
+		let _plate = inputPlate.split('');
+		switch (_plate[4]) {
+			case 'A':
+				_plate[4] = '0';
+				break;
+			case 'B':
+				_plate[4] = '1';
+				break;
+			case 'C':
+				_plate[4] = '2';
+				break;
+			case 'D':
+				_plate[4] = '3';
+				break;
+			case 'E':
+				_plate[4] = '4';
+				break;
+			case 'F':
+				_plate[4] = '5';
+				break;
+			case 'G':
+				_plate[4] = '6';
+				break;
+			case 'H':
+				_plate[4] = '7';
+				break;
+			case 'I':
+				_plate[4] = '8';
+				break;
+			case 'J':
+				_plate[4] = '9';
+				break;
+			default:
+				break;
+		}
+		_plate.splice(3, 0, '-')
+		_plate = _plate.join('');
+		setDisplayPlate(_plate)
+	}
 
 	const fixPlate = (inputPlate) => {
 		let _plate = inputPlate.toUpperCase();
 		const initialRegex = /^[A-Z]{0,3}$/gi;
-		const plateRegex = /^[A-Z]{3}-[0-9]{0,4}$/g;
-		if (initialRegex.test(_plate)) {
-			if (plate[3] === '-') return setPlate(_plate)
-			return _plate.length === 3 ? setPlate(`${_plate}-`) : setPlate(_plate);
+		const plateRegex = isPreviousPatterOn ? /^[A-Z]{0,3}$|^[A-Z]{0,3}[0-9]$|^[A-Z]{0,3}[0-9][A-Z]$|^[A-Z]{0,3}[0-9][A-Z][0-9]{0,2}$/g : /^[A-Z]{3}-[0-9]{0,4}$/g;
+		if (!isPreviousPatterOn && initialRegex.test(_plate)) {
+			if (inputPlate[3] === '-') return setInputPlate(_plate)
+			return _plate.length === 3 ? setInputPlate(`${_plate}-`) : setInputPlate(_plate);
 		}
 		if (plateRegex.test(_plate)) {
-			return setPlate(_plate);
+			return setInputPlate(_plate);
 		}
 		return;
 	};
+
+	useEffect(() => {
+		setInputPlate('')
+		setDisplayPlate('')
+	}, [isPreviousPatterOn])
 
 	return (
 		<div className='App'>
 			<div id='app-wrapper'>
 				<div>
-					<p>Digite aqui a sua placa no padrão anterior:</p>
+					<input type="checkbox" onChange={() => togglePreviousPattern(!isPreviousPatterOn)} checked={isPreviousPatterOn} />
+				</div>
+				<div>
+					<p>Digite aqui a sua placa no padrão {!isPreviousPatterOn ? 'anterior' : 'atual'}:</p>
 					<div id='converter'>
-						<input value={plate} onInput={(e) => fixPlate(e.target.value)} />
-						<button onClick={convert}>Converter</button>
+						<input value={inputPlate} onInput={(e) => fixPlate(e.target.value)} />
+						<button onClick={isPreviousPatterOn ? convertBack : convert}>Converter</button>
 					</div>
 				</div>
-				{newPlate && <Plate plate={newPlate} />}
+				{displayPlate && <Plate plate={displayPlate} />}
 			</div>
 		</div>
 	);
