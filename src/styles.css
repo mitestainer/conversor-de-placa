@@ -1,6 +1,8 @@
 @font-face {
 	font-family: FE-FONT;
 	src: url('../src/assets/fonts/FE-FONT.TTF');
+	font-style: normal;
+	font-size-adjust: none;
 }
 
 @font-face {

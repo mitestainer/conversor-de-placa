@@ -72,7 +72,7 @@
     align-items: center;
 }
 
-#number p {
+#number div {
     font-family: 'FE-FONT', sans-serif;
     font-size: 130px;
 }
@@ -107,11 +107,22 @@
         height: calc(100vh * 0.92);
     }
 
-    #number p {
+    #number div {
         font-size: 100px;
+        height: 100%;
+        position: relative;
+        width: 70%;
+        padding-top: 15px;
+    }
+    
+    #number div span {
+        position: absolute;
+        left: 0;
+        right: 0;
     }
 
-    #number p span {
-        display: block;
+    #number div span:nth-child(2) {
+        top: 50%;
     }
+
 }

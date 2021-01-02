@@ -19,7 +19,7 @@ const Plate = ({ plate }) => {
                         </div>
                     </div>
                     <div id="number">
-                        <p><span>{plate.substr(0, 3)}</span><span>{plate.substr(3)}</span></p>
+                        <div><span>{plate.substr(0, 3)}</span><span>{plate.substr(3)}</span></div>
                         <img src={QRCode} alt="Fake QRCode" />
                         <span id="br-tag">BR</span>
                     </div>
