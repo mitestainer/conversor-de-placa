@@ -42,14 +42,24 @@ html, body, #root {
 	font-size: 20px;
 }
 
-#converter input {
-	width: 140px;
+#converter{
+	display: flex;
+	justify-content: center;
+}
+
+.input-field {
+	width: 100%;
 	border: 0;
 	border-bottom: 1px solid;
 	font-family: inherit;
 	font-size: 26px;
 	padding-left: 10px;
 	line-height: 0;
+}
+
+.plate-error {
+	color: tomato;
+	border-bottom-color: tomato;
 }
 
 #converter button {
@@ -64,9 +74,29 @@ html, body, #root {
 	padding: 0 10px;
 }
 
+#input-area {
+	position: relative;
+	width: 140px;
+}
+
+#input-area span {
+	position: absolute;
+	color: tomato;
+	bottom: -20px;
+	left: 0;
+	right: 0;
+	font-size: 12px;
+}
+
 @media screen and (max-width: 1023px) {
+
+	.App {
+		display: block;
+		height: auto;
+	}
+
     #app-wrapper {
-        height: 100%;
-        max-height: 500px;
+        height: auto;
+		padding: 70px 0;
 	}
 }

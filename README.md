@@ -1,6 +1,6 @@
 # Conversor de placa 🚗 🛵
 
-Esse projeto pessoal é um app em React que converte a placa de carros do padrão antigo para o novo padrão adotado no Mercosul. Você pode acessá-lo [aqui](https://mitestainer.github.io/conversor-de-placa/).
+Esse projeto pessoal é um app em React que converte a placa de carros do padrão antigo para o novo padrão adotado no Mercosul. Você pode acessá-lo [aqui](https://conversor-de-placa.netlify.app/).
 
 ## Sobre o projeto
 
