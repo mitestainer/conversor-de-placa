@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ModeButton from './components/ModeButton';
 import Plate from './components/Plate'
 
 import './styles.css';
@@ -83,8 +84,10 @@ export default function App() {
 				_plate[4] = '9';
 				break;
 			default:
+				_plate = ''
 				break;
 		}
+		if (!_plate) return setDisplayPlate(null)
 		_plate.splice(3, 0, '-')
 		_plate = _plate.join('');
 		setDisplayPlate(_plate)
@@ -111,10 +114,8 @@ export default function App() {
 
 	return (
 		<div className='App'>
+			<ModeButton onChange={() => togglePreviousPattern(!isPreviousPatterOn)} checked={isPreviousPatterOn} />
 			<div id='app-wrapper'>
-				<div>
-					<input type="checkbox" onChange={() => togglePreviousPattern(!isPreviousPatterOn)} checked={isPreviousPatterOn} />
-				</div>
 				<div>
 					<p>Digite aqui a sua placa no padrão {!isPreviousPatterOn ? 'anterior' : 'atual'}:</p>
 					<div id='converter'>
@@ -122,7 +123,7 @@ export default function App() {
 						<button onClick={isPreviousPatterOn ? convertBack : convert}>Converter</button>
 					</div>
 				</div>
-				{displayPlate && <Plate plate={displayPlate} />}
+				<Plate plate={displayPlate} isPrevious={isPreviousPatterOn} />
 			</div>
 		</div>
 	);

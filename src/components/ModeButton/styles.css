@@ -1,0 +1,40 @@
+#mode-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px 10px 0 0;
+}
+
+#mode-button > p {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 14px;
+}
+
+#ball-area {
+    height: 30px;
+    width: 60px;
+    border: 1px solid #aaa;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#ball {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    transition: transform .1s linear;
+    background-color: #003399;
+}
+
+.off {
+    transform: translateX(5px);
+}
+
+.on {
+    transform: translateX(33px);
+}

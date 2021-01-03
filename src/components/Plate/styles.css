@@ -99,6 +99,18 @@
     bottom: 0;
 }
 
+#new-plate {
+    background-color: lightblue;
+    border: 1px solid cadetblue;
+    margin: 50px 30px 0;
+    border-radius: 10px;
+    padding: 20px 10px;
+}
+
+#new-plate p {
+    line-height: 1.3;
+}
+
 @media screen and (max-width: 1023px) {
     #plate {
         max-width: 400px;
