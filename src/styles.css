@@ -1,13 +1,21 @@
 @font-face {
-	font-family: FE-FONT;
+	font-family: 'FE-FONT';
 	src: url('../src/assets/fonts/FE-FONT.TTF');
-	font-style: normal;
-	font-size-adjust: none;
 }
 
 @font-face {
-	font-family: Catamaran;
+	font-family: 'Mandatory';
+	src: url('../src/assets/fonts/MANDATOR.ttf');
+}
+
+@font-face {
+	font-family: 'Catamaran';
 	src: url('../src/assets/fonts/Catamaran-VariableFont_wght.ttf');
+}
+
+@font-face {
+	font-family: 'Pathway Gothic One';
+	src: url('../src/assets/fonts/PathwayGothicOne-Regular.ttf');
 }
 
 *, *::before, *::after {
@@ -86,6 +94,18 @@ html, body, #root {
 	left: 0;
 	right: 0;
 	font-size: 12px;
+}
+
+#result {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#result h1 {
+    font-family: 'Catamaran', sans-serif;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1023px) {

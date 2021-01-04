@@ -1,10 +1,12 @@
 # Conversor de placa 🚗 🛵
 
-Esse projeto pessoal é um app em React que converte a placa de carros do padrão antigo para o novo padrão adotado no Mercosul. Você pode acessá-lo [aqui](https://conversor-de-placa.netlify.app/).
+Esse projeto pessoal é um app em React que converte a placa de carros do padrão antigo para o novo padrão adotado no Mercosul, e vice-versa. Você pode acessá-lo [aqui](https://conversor-de-placa.netlify.app/).
 
 ## Sobre o projeto
 
 O funcionamento do projeto é simples: um regex confere se o input é correto e uma função altera o segundo numeral da placa para uma letra correspondente (ver tabela abaixo). Os valores são guardados no state usando hooks.
+
+Há uma opção para mudar o formato da conversão: da placa antiga para a nova, e da placa nova para a antiga. A estilização da placa é equivalente ao formato selecionado.
 
 Quanto à responsividade, no mobile você verá a placa para motos e no desktop verá a placa para automóveis.
 

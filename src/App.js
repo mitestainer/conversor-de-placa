@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ModeButton from './components/ModeButton';
-import Plate from './components/Plate'
+import NewPlate from './components/NewPlate'
+import OldPlate from './components/OldPlate'
 
 import './styles.css'
 
@@ -148,7 +149,7 @@ export default function App() {
 						<button onClick={isPreviousPatterOn ? convertBack : convert}>Converter</button>
 					</div>
 				</div>
-				<Plate plate={displayPlate} isPrevious={isPreviousPatterOn} />
+				{isPreviousPatterOn ? <OldPlate plate={displayPlate} /> : <NewPlate plate={displayPlate} />}
 			</div>
 		</div>
 	)
